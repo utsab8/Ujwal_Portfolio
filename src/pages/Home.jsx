@@ -6,6 +6,7 @@ import Education from '../components/Education';
 import Skills from '../components/Skills';
 import Training from '../components/Training';
 import Projects from '../components/Projects';
+import Gallery from '../components/Gallery';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
@@ -22,6 +23,7 @@ export default function Home() {
         <Skills />
         <Training />
         <Projects />
+        <Gallery />
         <Testimonials />
         <Contact />
       </main>

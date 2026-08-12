@@ -192,6 +192,19 @@ export const socialLinks = [
     { name: "Facebook", url: "#", icon: "facebook" }
 ];
 
+export const galleryData = [
+    {
+        id: "1",
+        company: "The Ritz-Carlton",
+        coverImage: "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+        images: [
+            "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+            "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+        ]
+    }
+];
+
 export const testimonialsData = [
     {
         quote: "Ujwal brings an unmatched level of professionalism and an incredible eye for detail. His ability to manage complex operations while keeping the team motivated and focused on guest satisfaction is truly remarkable.",

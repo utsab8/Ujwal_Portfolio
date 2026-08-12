@@ -28,6 +28,7 @@ export function DataProvider({ children }) {
         projectsData: initialData.projectsData,
         testimonialsData: initialData.testimonialsData,
         socialLinks: initialData.socialLinks,
+        galleryData: initialData.galleryData,
       });
     }
     setLoading(false);

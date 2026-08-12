@@ -19,6 +19,7 @@ import { useNavigate } from 'react-router-dom';
 import HeroForm from '../components/admin/HeroForm';
 import AboutForm from '../components/admin/AboutForm';
 import ListForm from '../components/admin/ListForm';
+import GalleryForm from '../components/admin/GalleryForm';
 import ImageUpload from '../components/admin/ImageUpload';
 
 const sidebarItems = [
@@ -30,6 +31,7 @@ const sidebarItems = [
   { id: 'skills', label: 'Skills & Expertise', icon: Award },
   { id: 'training', label: 'Training', icon: BookOpen },
   { id: 'projects', label: 'Projects', icon: LayoutDashboard },
+  { id: 'gallery', label: 'Work Gallery', icon: ImageIcon },
   { id: 'testimonials', label: 'Testimonials', icon: User },
 ];
 
@@ -332,6 +334,9 @@ export default function AdminDashboard() {
             )}
           />
         );
+
+      case 'gallery':
+        return <GalleryForm />;
 
       case 'testimonials':
         return (
