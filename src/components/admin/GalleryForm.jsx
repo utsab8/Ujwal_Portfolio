@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useData } from '../../context/DataContext';
-import { Save, Plus, Trash2, Loader2, Image as ImageIcon, ChevronDown, ChevronUp } from 'lucide-react';
+import { Save, Plus, Trash2, Loader2, Image as ImageIcon, ChevronDown, ChevronUp, X } from 'lucide-react';
 import Toast from './Toast';
 import ImageUpload from './ImageUpload';
 
