@@ -15,7 +15,19 @@ export function DataProvider({ children }) {
     // Load from local storage or fallback to initial data
     const savedData = localStorage.getItem('portfolioData');
     if (savedData) {
-      setData(JSON.parse(savedData));
+      const parsedData = JSON.parse(savedData);
+      setData({
+        aboutData: parsedData.aboutData || initialData.aboutData,
+        experienceData: parsedData.experienceData || initialData.experienceData,
+        educationData: parsedData.educationData || initialData.educationData,
+        coreSkills: parsedData.coreSkills || initialData.coreSkills,
+        expertiseAreas: parsedData.expertiseAreas || initialData.expertiseAreas,
+        trainingData: parsedData.trainingData || initialData.trainingData,
+        projectsData: parsedData.projectsData || initialData.projectsData,
+        testimonialsData: parsedData.testimonialsData || initialData.testimonialsData,
+        socialLinks: parsedData.socialLinks || initialData.socialLinks,
+        galleryData: parsedData.galleryData || initialData.galleryData,
+      });
     } else {
       setData({
         heroData: initialData.heroData,
