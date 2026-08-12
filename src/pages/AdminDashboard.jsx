@@ -14,6 +14,7 @@ import {
   BookOpen
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
+import { useData } from '../context/DataContext';
 import { useNavigate } from 'react-router-dom';
 import HeroForm from '../components/admin/HeroForm';
 import AboutForm from '../components/admin/AboutForm';
@@ -36,6 +37,7 @@ export default function AdminDashboard() {
   const [activeTab, setActiveTab] = useState('hero');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const { logout, currentUser } = useAuth();
+  const { data } = useData();
   const navigate = useNavigate();
 
   const handleLogout = async () => {
