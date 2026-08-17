@@ -43,6 +43,36 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (e, href) => {
+    e.preventDefault();
+    setIsMobileMenuOpen(false);
+    
+    setTimeout(() => {
+      if (href === '#') {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+        window.history.pushState(null, '', href);
+        return;
+      }
+
+      const element = document.querySelector(href);
+      if (element) {
+        const headerOffset = 80; // approximate header height
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.scrollY - headerOffset;
+    
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+        
+        window.history.pushState(null, '', href);
+      }
+    }, 150);
+  };
+
   return (
     <header
       className={cn(
@@ -53,7 +83,7 @@ export default function Navbar() {
       )}
     >
       <div className="container mx-auto px-6 max-w-6xl flex justify-between items-center">
-        <a href="#" className="font-serif text-2xl font-bold text-sky-900 tracking-tight">
+        <a href="#" onClick={(e) => scrollToSection(e, '#')} className="font-serif text-2xl font-bold text-sky-900 tracking-tight">
           Ujwal Acharya
         </a>
 
@@ -63,8 +93,9 @@ export default function Navbar() {
             <a
               key={link.name}
               href={link.href}
+              onClick={(e) => scrollToSection(e, link.href)}
               className={cn(
-                'text-sm font-medium transition-colors hover:text-sky-500 relative group',
+                'text-sm font-medium transition-colors hover:text-sky-500 relative group cursor-pointer',
                 activeSection === link.href.substring(1) ? 'text-sky-500' : 'text-slate-600'
               )}
             >
@@ -104,11 +135,11 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
+                  onClick={(e) => scrollToSection(e, link.href)}
                   className={cn(
-                    'text-base font-medium transition-colors',
+                    'text-base font-medium transition-colors cursor-pointer',
                     activeSection === link.href.substring(1) ? 'text-sky-500' : 'text-slate-600'
                   )}
-                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.name}
                 </a>
